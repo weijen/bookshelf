@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  ensure_authenticated_to_facebook [:except => 'add_facebook_application']
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end
